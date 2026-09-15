@@ -4,6 +4,8 @@ __pycache__/
 .pytest_cache/
 .venv/
 venv/
+.verify-venv/
+.pip-cache/
 
 # Environment and secrets
 .env
@@ -24,4 +26,6 @@ data/uploads/
 *.ogg
 *.webm
 node_modules/
+frontend/react-app/.npm-cache/
+frontend/react-app/dist/
 .pyc

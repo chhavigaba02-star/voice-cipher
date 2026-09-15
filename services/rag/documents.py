@@ -17,7 +17,8 @@ def load_sop_documents(directory: str | Path) -> list[tuple[Path, str]]:
     root = Path(directory)
     if not root.exists():
         return []
-    return [(path, path.read_text(encoding="utf-8")) for path in sorted(root.glob("*.md"))]
+    paths = sorted(root.glob("*.md"), key=lambda path: (path.name != "demo_operator_support.md", path.name))
+    return [(path, path.read_text(encoding="utf-8")) for path in paths]
 
 
 def chunk_sop_document(path: str | Path, content: str, chunk_size: int = 700) -> list[SopChunk]:
